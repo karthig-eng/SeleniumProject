@@ -14,7 +14,7 @@ public class TC_AddCustomerTest_003 extends BaseClass
 	@Test
 	public void addNewCustomer() throws InterruptedException, IOException
 	{
-		LoginPage lp=new LoginPage(driver);
+		LoginPage lp=new LoginPage(driver);//use login page object to login
 		lp.setUserName(username);
 		logger.info("User name is provided");
 		lp.setPassword(password);
@@ -23,7 +23,7 @@ public class TC_AddCustomerTest_003 extends BaseClass
 		
 		Thread.sleep(3000);
 		
-		AddCustomerPage addcust=new AddCustomerPage(driver);
+		AddCustomerPage addcust=new AddCustomerPage(driver);//use AddCustomerPage object to add customer
 		
 		addcust.clickAddNewCustomer();
 		
@@ -42,7 +42,7 @@ public class TC_AddCustomerTest_003 extends BaseClass
 		
 		String email=randomestring()+"@gmail.com";
 		addcust.custemailid(email);
-		addcust.custpassword("abcdef");
+		//addcust.custpassword("abcdef");
 		addcust.custsubmit();
 		
 		Thread.sleep(3000);

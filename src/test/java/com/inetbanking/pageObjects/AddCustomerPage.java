@@ -16,7 +16,7 @@ public class AddCustomerPage {
 		PageFactory.initElements(rdriver, this);
 	}
 	
-	@FindBy(how = How.XPATH, using ="/html/body/div[3]/div/ul/li[2]/a")
+	@FindBy(how = How.XPATH, using ="//a[normalize-space()='New Customer']")
 	@CacheLookup
 	WebElement lnkAddNewCustomer;
 
@@ -98,7 +98,7 @@ public class AddCustomerPage {
 	}
 
 	public void custpinno(String cpinno) {
-		txtpinno.sendKeys(String.valueOf(cpinno));
+		txtpinno.sendKeys(String.valueOf(cpinno));//string or number.so number means change to string
 	}
 
 	public void custtelephoneno(String ctelephoneno) {

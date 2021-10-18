@@ -25,10 +25,10 @@ public class TC_LoginDDT_002 extends BaseClass
 		
 		Thread.sleep(3000);
 		
-		if(isAlertPresent()==true)
+		if(isAlertPresent()==true)//failed to login
 		{
 			driver.switchTo().alert().accept();//close alert
-			driver.switchTo().defaultContent();
+			driver.switchTo().defaultContent();//go to main page
 			Assert.assertTrue(false);
 			logger.warn("Login failed");
 		}
@@ -36,10 +36,10 @@ public class TC_LoginDDT_002 extends BaseClass
 		{
 			Assert.assertTrue(true);
 			logger.info("Login passed");
-			lp.clickLogout();
+			lp.clickLogout();//click on logout on login page page objtch
 			Thread.sleep(3000);
 			driver.switchTo().alert().accept();//close logout alert
-			driver.switchTo().defaultContent();
+			driver.switchTo().defaultContent();//go to main page
 			
 		}
 		
@@ -51,10 +51,10 @@ public class TC_LoginDDT_002 extends BaseClass
 	{
 		try
 		{
-		driver.switchTo().alert();
+		driver.switchTo().alert();//True?
 		return true;
 		}
-		catch(NoAlertPresentException e)
+		catch(NoAlertPresentException e)//false?
 		{
 			return false;
 		}
